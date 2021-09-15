@@ -129,6 +129,13 @@ a {
     }
 }
 
+@media (max-height: 800px) {
+    footer {
+        position: static;
+        margin-top: 40px;
+    }
+}
+
 @media (max-width: 780px) {
     .cases p {
         width: 35%;
