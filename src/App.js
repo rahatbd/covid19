@@ -20,7 +20,6 @@ class App extends Component {
             url: 'https://api.covid19api.com/summary',
             dataResponse: 'json',
         }).then(response => {
-            // console.log(response);
             const countryCollection = ['Global'];
             for (let index = 0; index < response.data.Countries.length; index++) {
                 countryCollection.push(response.data.Countries[index].Country);
@@ -47,8 +46,10 @@ class App extends Component {
                     <h1 className="wrapper">Covid-19 Tracker</h1>
                 </header>
 
-                <Display globalData={this.state.globalCases} countryData={this.state.userSelection}/>
-                <Form countrySelection={this.state.countryList} userSelection={this.getUserSelection}/>
+                <main>
+                    <Display globalData={this.state.globalCases} countryData={this.state.userSelection}/>
+                    <Form countrySelection={this.state.countryList} userSelection={this.getUserSelection}/>
+                </main>
 
                 <footer>
                     <div className="wrapper">
